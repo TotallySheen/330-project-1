@@ -23,6 +23,16 @@
                 ctx.stroke();
             }
             ctx.restore();
+        },
+
+        drawLine : function(ctx,x1,y1,x2,y2,strokeStyle="white",lineWidth=1){
+            ctx.save();
+            ctx.moveTo(x1,y1);
+            ctx.lineTo(x2,y2);
+            ctx.strokeStyle = strokeStyle;
+            ctx.lineWidth = lineWidth;
+            ctx.stroke();
+            ctx.restore();
         }
     };
 

@@ -2,28 +2,53 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Game of Life Playground</title>
+    <title>Game of Life Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/default-styles.css">
     <script src="src/presets.js"></script>
     <script src="src/spgLIB.js"></script>
 	<script src="src/Lifeworld.js"></script>
-	<script src="src/main.js"></script>
+	<script src="src/index.js"></script>
 </head>
 <body>
     <section id="canvas">
         <h1>Game of Life Playground</h1>
         <canvas></canvas>
+        <p id="toggle" style="visibility: visible;">Click to Draw or Kill Cells</p>
+        <div id="description">
+            <h2>Description</h2>
+            <p> This is a visualization of Conway's Game of Life, with various tools in place to
+                experiment with changing of the game's core rules. These tools include:
+            </p>
+                <ul>
+                    <li>Changing the number of neighbors that cause life or death.</li>
+                    <li>Some common presets to mess around with.</li>
+                    <li>Click functionality to paint your own patterns.</li>
+                </ul>
+            <p>
+                Enjoy!
+            </p>
+        </div>
     </section>
 
     <section id="controls">
         <h1>Controls</h1>
         <section id="basics">
             <input type="checkbox" id="grid" name="grid">
-            <label for="grid">Display Grid?</label>
+            <label for="grid" id="gridLabel">Display Grid?</label><br>
             <button type="button" id="play">Play</button>
-            <button type="button" id="pause">Pause</button>
+            <button type="button" id="pause" disabled>Pause</button>
             <button type="button" id="reset">Reset</button>
             <button type="button" id="step">Step Once</button>
+            <button type="button" id="save">Save</button>
+            <button type="button" id="load">Load</button>
+            <h2>FPS</h2>
+            <input type="radio" id="6fps" name="fps" value=6>
+            <label for="6fps">6</label>
+            <input type="radio" id="12fps" name="fps" value=12 checked>
+            <label for="12fps">12</label>
+            <input type="radio" id="24fps" name="fps" value=24>
+            <label for="24fps">24</label>
         </section>
         <section id="sliders">
             <h2>Alive Cells</h2>
@@ -49,10 +74,16 @@
                 <label for="maxDead">Maximum Living Neighbors</label>
             </div>
         </section>
-        <section id="presets">
+        <section id="preset">
             <h2>Presets</h2>
             <select name="presets" id="presets">
-                <option value="none" selected>Random</option>
+                <option value="random" selected>Random</option>
+                <option value="empty">Empty</option>
+                <option value="full">Full</option>
+                <option value="gliderGun">Glider Gun</option>
+                <option value="garden">Garden of Eden</option>
+                <option value="pulsar">Pulsar</option>
+                <option value="penta">Pentadecathlon</option>
             </select>
         </section>
     </section>

@@ -1,12 +1,80 @@
 body{
-    font-family: sans-serif;
-    background-color: rgb(173, 173, 173);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto 40vw;
+    color: lime;
+    justify-items: center;
     text-align: center;
 }
-canvas{
-    background-color: #FFFFFF;
+#canvas > h1{
+    text-align: center;
+    font-size: 2em;
 }
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+#description{
+    border: 1px solid lime;
+}
+#description p, li{
+    text-align: left;
+    padding: 0 1em 0.5em 1em;
+    width: 40vw;
+}
+#controls{
+    border: 1px solid lime;
+    padding: 0 2.5vw 0 2.5vw;
+}
+label[for="minAlive"],label[for="maxAlive"],label[for="minDead"],label[for="maxDead"]{
+    display:block;
+}
+canvas{
+    background-color: black;
+    border: 2px solid white;
+}
+#toggle{
+    font-size: 1.75em;
+    margin-bottom: 2em;
+}
+#grid{
+    margin-bottom: 2em;
+}
+#gridLabel{
+    font-size: 1.5em;
+}
+input[type="range"]{
+    background-color: limegreen;
+}
+button{
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    color:white;
+    height: 3em;
+    border: 2px inset lime;
+    font-size: 1em;
+    margin: 0.25em;
+}
+button[disabled]{
+    border: 2px inset gray;
+}
+#preset{
+    padding-bottom: 5vh;
+}
+#presets{
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    color:white;
+    height: 2em;
+    border: 2px inset lime;
+    font-size: 1em;
+}
+/*
+display:flex;
+flex-direction: column;
+align-items: center;
+align-content: center;
+text-align: center;*/
