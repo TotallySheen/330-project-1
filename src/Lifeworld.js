@@ -13,7 +13,6 @@ class Lifeworld{
         this.worldBuffer = this.buildArray();
         this.savedWorld = this.buildArray();
         this.randomSetup();
-        console.table(this.world); // debugging
     }
 
     buildArray(){
